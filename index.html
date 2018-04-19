@@ -1,0 +1,68 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    </head>
+<body>
+    <div>
+        <h1>Guess what text I'm thinking of</h1>
+    </div>
+        <!-- 2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
+
+        3. Guess what letter I'm thinking of
+        
+        4. Wins: (# of times the user has guessed the letter correctly)
+        
+        5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+        
+        6. Guesses Left: (# of guesses left. This will update)
+        
+        7. Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
+        
+        8. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+        
+        9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
+
+
+        <!-- array with all the values the computer will be able to choose from -->
+    <script type="text/javascript">
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        // variable that will hold the number of wins, losses, letter guessed and number of guesses remaing
+        var wins = 0;
+        var losses = 0;
+        var guess = 0;
+        var guessesUsed = 0;
+
+        // function that runs when user presses a key
+        document.onkeyup = function() {
+        //    determines what key was pressed
+           var userGuess = event.key;
+        // randomly chooses a variable from the computer choices array
+        var computerDecision = computerChoices[Math.floor(Math.random() * computerChoices.lenght)];
+
+        }
+
+        // code from question-game-solved that updates the page to keep score. Might be able to repurpose.
+        alert("Correct!");
+          score++;
+          updateScore();
+        }
+        // If wrong, alert them they are wrong.
+        else {
+          alert("Wrong!");
+        }
+
+        // Increment the questionIndex variable and call the renderQuestion function.
+        questionIndex++;
+        renderQuestion();
+
+        
+    </script>
+    
+</body>
+</html>
