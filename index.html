@@ -8,10 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     </head>
 <body>
-    <div>
-        <h1>Guess what text I'm thinking of</h1>
-    </div>
-        <!-- 2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
+            <!-- 2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
 
         3. Guess what letter I'm thinking of
         
@@ -28,8 +25,21 @@
         9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
 
 
-        <!-- array with all the values the computer will be able to choose from -->
+<div> 
+    <h1>The Psychic Game</h1> 
+    <p>Guess what letter I'm thinking of</p>
+</div>
+<div>
+    <p id="wins"></p>
+    <p id="losses"></p>
+    <p id="guessLeft"></p>
+    <p id="letterGuess"></p>
+    <p></p>
+</div>
+
+       
     <script type="text/javascript">
+     <!-- array with all the values the computer will be able to choose from -->
         var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         // variable that will hold the number of wins, losses, letter guessed and number of guesses remaing
