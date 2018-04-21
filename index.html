@@ -2,11 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    </head>
+</head>
+
 <body>
             <!-- 2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
 
@@ -27,49 +25,80 @@
 
 <div> 
     <h1>The Psychic Game</h1> 
-    <p>Guess what letter I'm thinking of</p>
+    <p>Guess what letter I'm thinking of!</p>
 </div>
-<div>
+<div class="game">
     <p id="wins"></p>
     <p id="losses"></p>
     <p id="guessLeft"></p>
     <p id="letterGuess"></p>
-    <p></p>
+    
 </div>
 
        
     <script type="text/javascript">
-     <!-- array with all the values the computer will be able to choose from -->
+    //  <!-- array with all the values the computer will be able to choose from -->
         var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         // variable that will hold the number of wins, losses, letter guessed and number of guesses remaing
         var wins = 0;
         var losses = 0;
-        var guess = 0;
         var guessesUsed = 0;
 
         // function that runs when user presses a key
-        document.onkeyup = function() {
+        document.onkeyup = function(event) {
         //    determines what key was pressed
            var userGuess = event.key;
         // randomly chooses a variable from the computer choices array
-        var computerDecision = computerChoices[Math.floor(Math.random() * computerChoices.lenght)];
-
+        var computerDecision = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            guessesUsed++;
+                if (userGuess === computerDecision) {
+                wins++;
+            }   else {
+                losses++;
         }
+            document.querySelector("#wins").innerHTML = "Wins: " + wins;
+            document.querySelector("#losses").innerHTML = "Losses: " + losses;
 
-        // code from question-game-solved that updates the page to keep score. Might be able to repurpose.
-        alert("Correct!");
-          score++;
-          updateScore();
+                if (guessesUsed <= 9) {
+            document.querySelector("#guessLeft").innerHTML = "Guesses left: " + (9 - guessesUsed)
         }
-        // If wrong, alert them they are wrong.
-        else {
-          alert("Wrong!");
+            // document.querySelector("#losses").innerHTML = "Losses: " + losses;
         }
+    
 
-        // Increment the questionIndex variable and call the renderQuestion function.
-        questionIndex++;
-        renderQuestion();
+        //   function round() {
+        //     if (guessesUsed <= 9);
+        // }
+        
+
+         // function that updates wins
+        //  function updateWins() {
+           
+            
+        // }
+
+        //  function updateLosses() {
+           
+        // }
+        
+        
+
+        //       // code from question-game-solved that updates the page to keep score. Might be able to repurpose.
+        // alert("Correct!");
+        //   score++;
+        //   updateScore();
+        // }
+        // // If wrong, alert them they are wrong.
+        // else {
+        //   alert("Wrong!");
+        // }
+
+        // // Increment the questionIndex variable and call the renderQuestion function.
+        // questionIndex++;
+        // renderQuestion();
+
+       
 
         
     </script>
