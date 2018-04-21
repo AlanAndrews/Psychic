@@ -44,7 +44,7 @@
         var wins = 0;
         var losses = 0;
         var guessesUsed = 0;
-        var letterGuessed = ["pppppp"];
+        var letterGuessed = document.getElementById("letterGuess");
             
 
         // function that runs when user presses a key
@@ -57,21 +57,22 @@
                 if (userGuess === computerDecision) {
                 wins++;
             }   else {
+                letterGuessed.textContent = "Letters guessed: " + event.key;
                 
-                document.querySelector("#letterGuess").innerHTML = "Letters guessed: " + letterGuessed;
-                function myFunction() {
-                    letterGuessed.push(computerChoices);
+                // document.querySelector("#letterGuess").innerHTML = "Letters guessed: " + letterGuessed;
+                // function myFunction() {
+                //     letterGuessed.push("lol");
                     
-                // }
+                // // }
                 
-                }
+                // }
             } 
                 if (guessesUsed < 11) {
-            document.querySelector("#guessLeft").innerHTML = "Guesses left: " + (10 - guessesUsed)
-                // else {
-                    // losses++;
-                // }
-        }
+            document.querySelector("#guessLeft").innerHTML = "Guesses left: " + (10 - guessesUsed);
+            } else {
+            document.querySelector("#guessLeft").innerHTML = "Guesses left: " + 0;
+                }
+                
 
             document.querySelector("#wins").innerHTML = "Wins: " + wins;
             document.querySelector("#losses").innerHTML = "Losses: " + losses;
